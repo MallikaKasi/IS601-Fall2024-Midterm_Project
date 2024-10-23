@@ -1,27 +1,44 @@
 """
-Unit tests for the MultiplyCommand in the Multiply plugin.
+Unit tests for MultiplyCommand functionality.
 """
 
-import pytest  # Third-party imports
-from app.commands import CommandHandler  # Local imports
+import unittest
+import logging
+import pandas as pd
+from app.commands import CommandHandler
+from app.plugins.Multiply import register  # Removed unused imports
 
-@pytest.fixture
-def command_handler():
-    """Fixture to create and return a CommandHandler instance."""
-    handler = CommandHandler()
-    handler.load_plugin('Multiply')  # Load the 'Multiply' plugin
-    return handler
+# Disable logging for tests
+logging.disable(logging.CRITICAL)
 
-def test_multiply_by_zero(command_handler):
-    """Test multiplying by zero."""
-    a, b = 10, 0
-    command_handler.create_command('Multiply', a, b)
-    result = command_handler.execute_command('Multiply')
-    assert result == 0
+class TestMultiplyCommand(unittest.TestCase):
+    """Unit tests for MultiplyCommand to test multiplication functionality."""
 
-def test_multiply_negative(command_handler):
-    """Test multiplying by a negative number."""
-    a, b = -5, 3
-    command_handler.create_command('Multiply', a, b)
-    result = command_handler.execute_command('Multiply')
-    assert result == -15
+    def setUp(self):
+        """Set up a CommandHandler instance and register the MultiplyCommand."""
+        self.command_handler = CommandHandler()  # Create a CommandHandler instance
+        self.multiply_command_creator = register(self.command_handler)  # Register the MultiplyCommand
+
+    def test_multiply_normal(self):
+        """Test multiplying two positive numbers."""
+        multiply_command = self.multiply_command_creator(10, 5)  # Multiply 10 * 5
+
+        # Execute the command and check the result
+        result = multiply_command.execute()
+        self.assertEqual(result, 50, "10 * 5 should result in 50.")
+
+        # Verify the result is added to the history
+        expected_history = pd.DataFrame({
+            'Operation': ['Multiply'],
+            'Value1': [10.0],
+            'Value2': [5.0],
+            'Result': [50.0]
+        })
+        pd.testing.assert_frame_equal(self.command_handler.history_df, expected_history, check_dtype=False)
+
+    def tearDown(self):
+        """Clean up after each test."""
+        self.command_handler.clear_history()
+
+if __name__ == "__main__":
+    unittest.main()

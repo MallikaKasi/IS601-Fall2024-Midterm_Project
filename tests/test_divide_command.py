@@ -1,41 +1,76 @@
 """
-Unit tests for the DivideCommand in the Divide plugin.
+Unit tests for DivideCommand functionality.
+Tests include normal division, division by zero, and negative number division.
 """
 
-import logging  # Standard library import
-import pytest  # Third-party import
-from app.plugins.Divide import DivideCommand  # Local import
+import unittest
+import logging
+import pandas as pd
+from app.commands import CommandHandler
+from app.plugins.Divide import register  # Removed DivideCommand, if not directly used
 
-def test_divide_success(caplog):
-    """Test successful division of two numbers."""
-    a, b = 10, 2
-    divide_command = DivideCommand(a, b)
+# Disable logging for tests
+logging.disable(logging.CRITICAL)
 
-    # Execute the command and capture logs
-    with caplog.at_level(logging.INFO):
-        divide_command.execute()
+class TestDivideCommand(unittest.TestCase):
+    """Unit tests for DivideCommand to test different division scenarios."""
 
-    assert "The result of dividing 10 / 2 = 5.0" in caplog.text  # Check logs
-    assert caplog.records[0].levelname == "INFO"  # Ensure the log level is INFO
+    def setUp(self):
+        """Set up a CommandHandler instance and register the DivideCommand."""
+        self.command_handler = CommandHandler()  # Create a CommandHandler instance
+        self.divide_command_creator = register(self.command_handler)  # Register the DivideCommand
 
-def test_divide_by_zero():
-    """Test division by zero, should raise a ValueError."""
-    a, b = 10, 0
-    divide_command = DivideCommand(a, b)
+    def test_divide_normal(self):
+        """Test dividing two positive numbers."""
+        divide_command = self.divide_command_creator(10, 2)  # Divide 10 / 2
 
-    # Test that dividing by zero raises a ValueError
-    with pytest.raises(ValueError, match="Unable to divide by 0"):
-        divide_command.execute()
+        # Execute the command and check the result
+        result = divide_command.execute()
+        self.assertEqual(result, 5, "10 / 2 should result in 5.")
 
-def test_logging_divide_by_zero(caplog):
-    """Test that division by zero is properly logged."""
-    a, b = 10, 0
-    divide_command = DivideCommand(a, b)
+        # Verify the result is added to the history
+        expected_history = pd.DataFrame({
+            'Operation': ['Divide'],
+            'Value1': [10.0],
+            'Value2': [2.0],
+            'Result': [5.0]
+        })
+        pd.testing.assert_frame_equal(self.command_handler.history_df, expected_history, check_dtype=False)
 
-    # Execute the command and capture logs
-    with caplog.at_level(logging.ERROR):
-        with pytest.raises(ValueError):
+    def test_divide_by_zero(self):
+        """Test dividing by zero which should raise a ValueError."""
+        divide_command = self.divide_command_creator(10, 0)  # Divide 10 / 0
+
+        # Expect a ValueError due to division by zero
+        with self.assertRaises(ValueError) as context:
             divide_command.execute()
 
-    assert "Unable to divide by 0" in caplog.text  # Check if error is logged
-    assert caplog.records[0].levelname == "ERROR"  # Ensure the log level is ERROR
+        # Check if the exception message is correct
+        self.assertEqual(str(context.exception), "Unable to divide by 0")
+
+        # Verify that no operation was added to the history after division by zero
+        self.assertTrue(self.command_handler.history_df.empty, "No entry should be added to the history when dividing by zero.")
+
+    def test_divide_negative_numbers(self):
+        """Test dividing negative and positive numbers."""
+        divide_command = self.divide_command_creator(-10, 2)  # Divide -10 / 2
+
+        # Execute the command and check the result
+        result = divide_command.execute()
+        self.assertEqual(result, -5, "-10 / 2 should result in -5.")
+
+        # Verify the result is added to the history
+        expected_history = pd.DataFrame({
+            'Operation': ['Divide'],
+            'Value1': [-10.0],
+            'Value2': [2.0],
+            'Result': [-5.0]
+        })
+        pd.testing.assert_frame_equal(self.command_handler.history_df, expected_history, check_dtype=False)
+
+    def tearDown(self):
+        """Clean up after each test."""
+        self.command_handler.clear_history()
+
+if __name__ == "__main__":
+    unittest.main()
