@@ -14,4 +14,4 @@ class ClearHistoryCommand(Command):
 
 
 def register(command_handler: CommandHandler):
-    return ClearHistoryCommand(command_handler)  # Return the class, not an instance
+    return ClearHistoryCommand(command_handler)  #   Return the class, not an instance
