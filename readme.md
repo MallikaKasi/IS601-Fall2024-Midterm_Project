@@ -24,12 +24,26 @@ Displays user friendly menu options.
 
 	Exit : To Perform Exit Operation
 
+## Usage Instructions:
+
+1. git clone "https://github.com/MallikaKasi/IS601-Fall2024-Midterm_Project"
+
+2. pip install -r requirements.txt
+
+3. Once installed, you can run the calculator application using:
 
 ### This Calculator runs in 2 modes
 
 i) Interactive Mode which is implemented using plugins
 
-ii) Implementation of command pattern and REPL to perform Add, Subtract, Multiply and Division.
+	To start the Interactive Calculator: python main.py I
+ 
+ii) Implementation of direct command line to perform Add, Subtract, Multiply and Division.
+
+	python main.py <number1> <number2> add
+	python main.py <number1> <number2> subtract
+	python main.py <number1> <number2> multiply
+	python main.py <number1> <number2> divide
 
 ## Main Features of this Project:
 
