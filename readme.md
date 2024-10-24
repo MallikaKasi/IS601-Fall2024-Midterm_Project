@@ -2,26 +2,25 @@
 
 This is the interactive Calculator that performs various functions.
 
+	Greet : To Perform Greet Operation
 
-	Greet : To Perform Greet Operation
+	Menu : To List the Menu options
 
-	Menu : To List the Menu options
+	Add : To Perform Addition
 
-	Add : To Perform Addition
+	Multiply : To Perform Multiplication
 
-	Multiply : To Perform Multiplication
+	Subtract : To Perform Subtraction
 
-	Subtract : To Perform Subtraction
+	Divide : To Perform Division
 
-	Divide : To Perform Division
+	History : To load the saved History Data
 
-	History : To load the saved History Data
+	ClearHistory : Clear the History details
 
-	ClearHistory : Clear the History details
+	DeleteFromHistory : Delete History from the Dataframe / CSV file
 
-	DeleteFromHistory : Delete History from the Dataframe / CSV file
-
-	Exit : To Perform Exit Operation
+	Exit : To Perform Exit Operation
 
 
 ### This Calculator runs in 2 modes
