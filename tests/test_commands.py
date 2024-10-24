@@ -126,11 +126,11 @@ class TestCommandHandler(unittest.TestCase):
         self.command_handler.add_history('Add', 5, 10, 15)
 
         # Export history to CSV
-        result = self.command_handler.export_to_csv('history.csv')
+        result = self.command_handler.export_to_csv('Test-History.csv')
 
         # Verify that the file was created and data was exported
-        self.assertTrue(os.path.exists('history.csv'))
-        self.assertEqual(result, 'History exported to history.csv')
+        self.assertTrue(os.path.exists('Test-History.csv'))
+        self.assertEqual(result, 'History exported to Test-History.csv')
 
     @patch.dict(os.environ, {}, clear=True)
     def test_import_from_csv(self):
@@ -138,11 +138,11 @@ class TestCommandHandler(unittest.TestCase):
         # Simulate a CSV file with history data
         # Simulate a CSV file with history data
         csv_data = 'Operation,Value1,Value2,Result\nAdd,5,10,15\nSubtract,20,5,15\n'
-        with open('history.csv', 'w', encoding='utf-8') as file:  # Specify the encoding explicitly
+        with open('Test-History.csv', 'w', encoding='utf-8') as file:  # Specify the encoding explicitly
             file.write(csv_data)
 
         # Import history from the CSV file
-        result = self.command_handler.import_from_csv('history.csv')
+        result = self.command_handler.import_from_csv('Test-History.csv')
 
         # Verify that the data was imported into the DataFrame
         self.assertEqual(len(self.command_handler.history_df), 2)
