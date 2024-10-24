@@ -32,14 +32,15 @@ Displays user friendly menu options.
 
 3. Once installed, you can run the calculator application using:
 
-### This Calculator runs in 2 modes
+### This Calculator runs in 2 mode
 
-i) Interactive Mode which is implemented using plugins
+i) Interactive Mode which is implemented using plugins To Perform arithmetic operations (Add, Subtract, Multiply, and Divide) and Management of calculation history.
 
 	To start the Interactive Calculator: python main.py I
  
-ii) Implementation of direct command line to perform Add, Subtract, Multiply and Division.
+ii) Direct command line Read-Eval-Print Loop (REPL) to facilitate direct interaction with the calculator to perform Add, Subtract, Multiply and Division.Implemented a 
 
+	python main.py 2 3 add	
 	python main.py <number1> <number2> add
 	python main.py <number1> <number2> subtract
 	python main.py <number1> <number2> multiply
@@ -84,19 +85,6 @@ ii) Implementation of direct command line to perform Add, Subtract, Multiply and
 	Test Coverage: The application is thoroughly tested using the pytest framework. All modules, functions, and features have been tested with a coverage rate of 91%.
 	Code Quality: The codebase adheres to PEP 8 standards, ensuring readability and maintainability. Testing also includes running pylint to maintain code quality.
 
-## To Run the Applications:
-
-	To run the Interactive Calculator: python main.py I
-
-	To perform the calculation directly from Command Line:  python main.py 2 3 add
-
-## Command-Line Interface (REPL) :
-
-	Implemented a Read-Eval-Print Loop (REPL) to facilitate direct interaction with the calculator to
-
-	To Perform arithmetic operations (Add, Subtract, Multiply, and Divide)
-
-	Management of calculation history.
 
 ## Design Patterns
 
