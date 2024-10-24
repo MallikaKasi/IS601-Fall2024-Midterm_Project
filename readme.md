@@ -131,7 +131,8 @@ Environmental Variables are loaded in the main.py. Environmental variables are l
 ![image](https://github.com/user-attachments/assets/6be590a2-7f6e-412c-a9a2-2e261b2a7036)
 ![image](https://github.com/user-attachments/assets/e2372103-615f-41c4-9bc8-0472a1c01e89)
 
-## Logging
+## Logging and Error Handling
+
 Logging is used print INFO, WARNING and Error messages. Info letting them know how the interactive calculator works and how to execute the list of commands in the menu options. Logging is also used as a warning and sends them an error message if they input an invalid command. Examples are shown below.
 
 ![image](https://github.com/user-attachments/assets/9621dba2-8c70-4074-aa03-4f7854c20787)
