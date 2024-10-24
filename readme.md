@@ -90,13 +90,13 @@ ii) Direct command line Read-Eval-Print Loop (REPL) to facilitate direct interac
 
 ### Command Design Pattern
 
-This project utilizes the Command design pattern in many places. All the operation functions utilize the command class. Example below is from the Add Command Code.
+This project utilizes the Command design pattern in many places to enhance modularity and flexibility. All the operation functions utilize the command class. Example below is from the Add Command Code.
 
 ![image](https://github.com/user-attachments/assets/b1df4678-897d-4b6c-9655-86b784f0e3d6)
 
 ### Factory Design Pattern
 
-Loading of plugins from plugin directories and creates instances of their classes without specifying their concrete class. Example is shown below.
+This pattern allows for greater flexibility and decoupling by delegating the creation logic to a separate method and facilitating easy modifications to the instantiation process without affecting the client code.Loading of plugins from plugin directories and creates instances of their classes without specifying their concrete class. Example is shown below.
 
 ![image](https://github.com/user-attachments/assets/0bcde930-6867-4523-b855-3b3899cb5886)
 
@@ -105,6 +105,12 @@ Loading of plugins from plugin directories and creates instances of their classe
 Facade design pattern been used for the complicated operations such as writing the history data to the specified csv file or importing data from a CSV file and interacting with Pandas DataFrames. Below is the code snippet.
 
 ![image](https://github.com/user-attachments/assets/382c56bc-5110-416d-b345-331231e523ec)
+
+### Singleton Pattern 
+
+To ensure that there is only one, globally accessible history of calculations within the application, managed through the comand handler class.This further enforces the Singleton pattern, as these methods ensure that the operations on the calculation history are performed on a global state  rather than any instance-specific state.
+
+![image](https://github.com/user-attachments/assets/b650316a-417d-4157-b0e7-8fed5a66ba28)
 
 ## DRY, LBYL, EAFP
 
@@ -129,7 +135,7 @@ There are many cases where DRY,LBYL and EAFP design principles are used in this 
 
 ## Environmental Variables
 
-Environmental Variables are loaded in the main.py. Environmental variables are loaded from the .env file. Environmental variables are also used in the configure logging method. logging_conf_path is an environmental variable and is used to determine the path to the logging config file.
+Environmental Variables are loaded in the main.py at Application Startup. Environmental variables are loaded from the .env file. Environmental variables are also used in the configure logging method. logging_conf_path is an environmental variable and is used to determine the path to the logging config file.
 
 ![image](https://github.com/user-attachments/assets/dca9f425-ccbd-4034-a74e-e6b0df8b9432)
 ![image](https://github.com/user-attachments/assets/6be590a2-7f6e-412c-a9a2-2e261b2a7036)
@@ -137,7 +143,7 @@ Environmental Variables are loaded in the main.py. Environmental variables are l
 
 ## Logging and Error Handling
 
-Logging is used print INFO, WARNING and Error messages. Info letting them know how the interactive calculator works and how to execute the list of commands in the menu options. Logging is also used as a warning and sends them an error message if they input an invalid command. Examples are shown below.
+Logging is used to print INFO, WARNING and Error messages. Info letting them know how the interactive calculator works and how to execute the list of commands in the menu options. Logging is also used as a warning and sends them an error message if they input an invalid command. This is to facilite both debugging and runtime monitoring. This helps us to capture a wide range of information, from operational data and event tracing to error and critical condition reporting.Examples are shown below.
 
 ![image](https://github.com/user-attachments/assets/9621dba2-8c70-4074-aa03-4f7854c20787)
 
