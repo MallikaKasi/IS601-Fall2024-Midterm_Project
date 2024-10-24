@@ -1,6 +1,8 @@
 ## Welcome to Interactive Calculator Application 
 
-This is the interactive Calculator that performs various functions.The calculator is a fully functional calculator that can perform basic arithmetic operations, stores history, gets history, deletes history, imports history from a csv file, and exports history from a csv file. The calculator also displays a user friendly menu options.
+This is the interactive Calculator that performs various functions.This calculator is a fully functional command-line calculator with support dynamic plugin integration and comprehensive calculation history management. This can perform basic arithmetic operations, stores history, gets history, deletes history, imports history from a csv file, and exports history from a csv file. The calculator application is designed to be extensible, user-friendly, and scalable. The project follows key design patterns and development best practices, ensuring efficient error handling, logging, and testing.
+
+Displays user friendly menu options. 
 
 	Greet : To Perform Greet Operation
 
