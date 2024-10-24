@@ -1,30 +1,45 @@
-## Welcome to Command-Plugin based Interactive Calculator Application With Environment Variables Loading, Logging and Continuous Integration Concepts 
+## Welcome to Command-Plugin based Interactive Calculator Application 
 
-This is the interactive Calculator that performs the functions.
+This is the interactive Calculator that performs various functions.
 
-Addition
+     Add : To Perform Addition
+     
+     Multiply : To Perform Multiplication
+    
+     Subtract : To Perform Subtraction
 
-Subtraction
+     Divide : To Perform Division
+     
+     ClearHistory : Clear the History details 
+     
+     DeleteFromHistory : Delete History from the Dataframe / CSV file
+          
+     Exit : To Perform Exit Operation
+     
+     Greet : To Perform Greet Operation
+     
+     History : To load the saved History Data
+    
+     Menu : To List the Menu options
+    
 
-Multiplication
+### This Calculator runs in 2 modes
 
-Division
+i) Interactive Mode which is implemented using plugins
 
-### This Calculator can run in 2 modes
+ii) Implementation of command pattern and REPL to perform Add, Subtract, Multiply and Division.
 
-1) Interactive Mode which is implemented using plugins
-
-2) Implementation of command pattern and REPL
+## Main Features of this Project:
 
 Added a main.py file to serve as an entry point to this program and provided command line utilities.
 
 Covers REPL and command patterns with four basic commands add, subtract, multiply and divide.
 
-Implements a menu command to list available command and usage example.
+Has a Menu command to list available command and usage examples.
 
 Implemented Greet and Exit Commands
 
-Uses Plugin architecture to dynamically load new plugins.
+**Plugin System :** Uses Plugin architecture to dynamically load new plugins and allow seamless integration of new commands or features.
 
 Uses .env file to set environment variables
 
@@ -32,23 +47,65 @@ Logging using Logger library.These logging statements will help us to trace the 
 
 Continuous Integration using GitHub Actions workflow to run tests on GitHub automatically.
 
-### Testing Commands:
-
-pytest 
-
-pytest --pylint
-
-pytest --pylint --cov
-
-pytest tests/test_main.py.
+**Calculation History Management with Pandas :**  Pandas library for Dataframe loading , CSV file export and import functions for History Management . Functions To Load, save, clear, and delete history records through the REPL interface.
 
 
-### Run the Applications:
+## Run the Applications:
+
 To run the Interactive Calculator: python main.py I
 
 To perform the calculation directly from Command Line:  python main.py 2 3 add
 
+## Command-Line Interface (REPL) :
+
+Implemented a Read-Eval-Print Loop (REPL) to facilitate direct interaction with the calculator to
+
+To Perform arithmetic operations (Add, Subtract, Multiply, and Divide)
+
+Management of calculation history.
+
+## Design Patterns
+
+### Command Design Pattern
+
+This project utilizes the Command design pattern in many places. All the operation functions utilize the command class. Example below is from the Add Command Code.
+
+![image](https://github.com/user-attachments/assets/b1df4678-897d-4b6c-9655-86b784f0e3d6)
+
+### Factory Design Pattern
+
+Loading of plugins from plugin directories and creates instances of their classes without specifying their concrete class. Example is shown below.
+
+![image](https://github.com/user-attachments/assets/0bcde930-6867-4523-b855-3b3899cb5886)
+
+### Facade Design Pattern
+
+Facade design pattern been used for the complicated operations such as writing the history data to the specified csv file or importing data from a CSV file and interacting with Pandas DataFrames. Below is the code snippet.
+
+![image](https://github.com/user-attachments/assets/382c56bc-5110-416d-b345-331231e523ec)
+
+## DRY, LBYL, EAFP
+
+There are many cases where DRY,LBYL and EAFP design principles are used in this project. Examples are mentioned below for reference.
+
+**DRY (Don't Repeat Yourself)** : principle is followed in the entire project. Below is the code snippet where plugin loading function is written as common code and has been called in mulplitple times.
+
+![image](https://github.com/user-attachments/assets/5ab5ba7a-583d-4358-8191-710a7ce22398)
+![image](https://github.com/user-attachments/assets/837fa53a-9410-4da3-9238-6c3c860f9b54)
+
+
+**EAFP (Easier to Ask for Forgiveness than Permission)** : Try and except blocks.Try executes the command without checking for errors and if an error occurs, an exception is raised as shown in except block. The code will execute the command, however, If a user does not type in a valid command, an exception is raised and an error message is printed out.
+
+![image](https://github.com/user-attachments/assets/8e35792c-b792-4e70-b519-e77d9205b788)
+![image](https://github.com/user-attachments/assets/27801fa0-806b-4a5c-aa17-2327a0a92419)
+
+
+**LBYL (Look Before You Leap)** : This first checks to see if the logging configuration file present before it attempts to load it. If the config file exists, then loads the logging configuration otherwise default to a basic logging configuration.
+![image](https://github.com/user-attachments/assets/28b4654e-c5eb-4ea5-9014-95fc497a3252)
+
+
 ## Environmental Variables
+
 Environmental Variables are loaded in the main.py. Environmental variables are loaded from the .env file. Environmental variables are also used in the configure logging method. logging_conf_path is an environmental variable and is used to determine the path to the logging config file.
 
 ![image](https://github.com/user-attachments/assets/dca9f425-ccbd-4034-a74e-e6b0df8b9432)
@@ -61,6 +118,16 @@ Logging is used print INFO, WARNING and Error messages. Info letting them know h
 
 ![image](https://github.com/user-attachments/assets/70acd646-0cdf-41e5-a7ec-5e1250ed4ac2)
 
+### Testing Commands:
+
+pytest 
+
+pytest --pylint
+
+pytest --pylint --cov
+
+pytest tests/test_main.py.
+
 ### Test Results:
 
 ![image](https://github.com/user-attachments/assets/1dc929b9-acb1-4eb2-af0d-e08c35ef9678)
@@ -68,7 +135,8 @@ Logging is used print INFO, WARNING and Error messages. Info letting them know h
 ![image](https://github.com/user-attachments/assets/cc98b3c3-321b-4110-877d-8d445faaa142)
 
 
-### Output Log File
+### Sample Log File output
+
 ![image](https://github.com/user-attachments/assets/e2d23f6a-2859-47c4-b89c-f851406bb6d4)
 ![image](https://github.com/user-attachments/assets/8b60a342-467b-4497-966b-5894d9616ce2)
 
