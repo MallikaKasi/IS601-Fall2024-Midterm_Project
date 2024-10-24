@@ -1,6 +1,6 @@
 ## Welcome to Interactive Calculator Application 
 
-This is the interactive Calculator that performs various functions.
+This is the interactive Calculator that performs various functions.The calculator is a fully functional calculator that can perform basic arithmeticoperations, stores history, gets history, deletes history, imports history from a csv file, and exports history from a csv file. The calculator also displays a user friednly menu options.
 
 	Greet : To Perform Greet Operation
 
@@ -31,38 +31,51 @@ ii) Implementation of command pattern and REPL to perform Add, Subtract, Multipl
 
 ## Main Features of this Project:
 
-Added a main.py file to serve as an entry point to this program and provided command line utilities.
+1. REPL Command-Line Interface (CLI)
+   
+	The Read-Eval-Print Loop (REPL) provides an intuitive command-line interface that allows users to perform arithmetic operations like addition, subtraction, multiplication, and division.
+	Access builtin commands like viewing the history, importing/exporting history, and clearing or deleting it.
+	Added a main.py file to serve as an entry point to this program and provided command line utilities.
+	Covers REPL and command patterns with four basic commands add, subtract, multiply and divide.
+	
+2. Plugin and Builtin Module System
+   
+   	 Uses Plugin architecture to dynamically load new plugins and allow seamless integration of new commands or features.
+   	 Has a Menu command to list available command and usage examples.
+   	Implemented Greet and Exit Commands
 
-Covers REPL and command patterns with four basic commands add, subtract, multiply and divide.
+3. Design Patterns & Best Practices
+ 
+   	Facade Pattern: Simplifies interactions between the application and the pandas data manipulation logic, allowing for a cleaner, more manageable interface.
+	DRY Principle: The code follows the "Don't Repeat Yourself" principle to ensure reusability and maintainability.
+	Look Before You Leap (LBYL) & Easier to Ask for Forgiveness than Permission (EAFP): These techniques are used to handle potential errors efficiently by checking for conditions before performing 		operations and catching exceptions where appropriate.
 
-Has a Menu command to list available command and usage examples.
+4. Environment Variables Loading and Logging/ Error Handling
+   
+	Uses .env file to set environment variables
+	Logging using Logger library.These logging statements will help us to trace the flow of the program and identify any issues.
 
-Implemented Greet and Exit Commands
+5. Continuous Integration
+   
+   	Using GitHub Actions workflow to run tests on GitHub automatically.
 
-**Plugin System :** Uses Plugin architecture to dynamically load new plugins and allow seamless integration of new commands or features.
-
-Uses .env file to set environment variables
-
-Logging using Logger library.These logging statements will help us to trace the flow of the program and identify any issues.
-
-Continuous Integration using GitHub Actions workflow to run tests on GitHub automatically.
-
-**Calculation History Management with Pandas :**  Pandas library for Dataframe loading , CSV file export and import functions for History Management . Functions To Load, save, clear, and delete history records through the REPL interface.
+7. Calculation History Management
+   	Using Pandas library for Dataframe loading , CSV file export and import functions for History Management . Functions To Load, save, clear, and delete history records through the REPL interface.
 
 
 ## To Run the Applications:
 
-To run the Interactive Calculator: python main.py I
+	To run the Interactive Calculator: python main.py I
 
-To perform the calculation directly from Command Line:  python main.py 2 3 add
+	To perform the calculation directly from Command Line:  python main.py 2 3 add
 
 ## Command-Line Interface (REPL) :
 
-Implemented a Read-Eval-Print Loop (REPL) to facilitate direct interaction with the calculator to
+	Implemented a Read-Eval-Print Loop (REPL) to facilitate direct interaction with the calculator to
 
-To Perform arithmetic operations (Add, Subtract, Multiply, and Divide)
+	To Perform arithmetic operations (Add, Subtract, Multiply, and Divide)
 
-Management of calculation history.
+	Management of calculation history.
 
 ## Design Patterns
 
@@ -141,6 +154,8 @@ pytest tests/test_main.py.
 ![image](https://github.com/user-attachments/assets/8b60a342-467b-4497-966b-5894d9616ce2)
 
 
+### My Calculator App Video Demonstration
+[TBA]
 
 
 
