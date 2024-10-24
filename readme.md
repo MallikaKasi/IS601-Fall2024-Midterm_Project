@@ -1,27 +1,28 @@
-## Welcome to Command-Plugin based Interactive Calculator Application 
+## Welcome to Interactive Calculator Application 
 
 This is the interactive Calculator that performs various functions.
 
-     Add : To Perform Addition
-     
-     Multiply : To Perform Multiplication
-    
-     Subtract : To Perform Subtraction
 
-     Divide : To Perform Division
-     
-     ClearHistory : Clear the History details 
-     
-     DeleteFromHistory : Delete History from the Dataframe / CSV file
-          
-     Exit : To Perform Exit Operation
-     
-     Greet : To Perform Greet Operation
-     
-     History : To load the saved History Data
-    
-     Menu : To List the Menu options
-    
+	Greet : To Perform Greet Operation
+
+	Menu : To List the Menu options
+
+	Add : To Perform Addition
+
+	Multiply : To Perform Multiplication
+
+	Subtract : To Perform Subtraction
+
+	Divide : To Perform Division
+
+	History : To load the saved History Data
+
+	ClearHistory : Clear the History details
+
+	DeleteFromHistory : Delete History from the Dataframe / CSV file
+
+	Exit : To Perform Exit Operation
+
 
 ### This Calculator runs in 2 modes
 
@@ -50,7 +51,7 @@ Continuous Integration using GitHub Actions workflow to run tests on GitHub auto
 **Calculation History Management with Pandas :**  Pandas library for Dataframe loading , CSV file export and import functions for History Management . Functions To Load, save, clear, and delete history records through the REPL interface.
 
 
-## Run the Applications:
+## To Run the Applications:
 
 To run the Interactive Calculator: python main.py I
 
