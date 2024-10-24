@@ -65,7 +65,7 @@ ii) Implementation of command pattern and REPL to perform Add, Subtract, Multipl
 7. Version Control
 	Git Best Practices: This project is maintained using Git version control. Best practices such as branching for feature development and using logical, meaningful commit messages were followed throughout 	the project lifecycle.
 8. Testing
-	Test Coverage: The application is thoroughly tested using the pytest framework. All modules, functions, and features have been tested with a coverage rate of 92%.
+	Test Coverage: The application is thoroughly tested using the pytest framework. All modules, functions, and features have been tested with a coverage rate of 91%.
 	Code Quality: The codebase adheres to PEP 8 standards, ensuring readability and maintainability. Testing also includes running pylint to maintain code quality.
 
 ## To Run the Applications:
@@ -151,15 +151,20 @@ pytest tests/test_main.py.
 
 ### Test Results:
 
-![image](https://github.com/user-attachments/assets/1dc929b9-acb1-4eb2-af0d-e08c35ef9678)
-![image](https://github.com/user-attachments/assets/6d483887-aff6-4e55-a44f-ccd181d81bf5)
-![image](https://github.com/user-attachments/assets/cc98b3c3-321b-4110-877d-8d445faaa142)
+![image](https://github.com/user-attachments/assets/c7043b78-3c48-4cdf-b29a-6b91705d76b5)
+![image](https://github.com/user-attachments/assets/9d1bb9e2-80a3-4c87-9c60-7c88b98b7071)
+![image](https://github.com/user-attachments/assets/72fb2283-3335-4e38-8af8-1cd726e87973)
+![image](https://github.com/user-attachments/assets/f93324d0-a898-4cb4-aec0-b4c98e014f56)
+![image](https://github.com/user-attachments/assets/0282b526-a6db-4035-8d89-d51d3aff223a)
+![image](https://github.com/user-attachments/assets/a3463a23-4d39-4789-9e1c-bcfdfac70562)
+![image](https://github.com/user-attachments/assets/f9a3ee84-da48-4a79-98fe-374066edccb9)
+
 
 
 ### Sample Log File output
 
-![image](https://github.com/user-attachments/assets/e2d23f6a-2859-47c4-b89c-f851406bb6d4)
-![image](https://github.com/user-attachments/assets/8b60a342-467b-4497-966b-5894d9616ce2)
+![image](https://github.com/user-attachments/assets/2eb35470-3710-47d1-aa01-f7f1dba346f7)
+![image](https://github.com/user-attachments/assets/734554a2-d297-4f7e-a8a2-2618fa0dfbae)
 
 
 ### My Calculator App Video Demonstration
