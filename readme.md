@@ -1,6 +1,6 @@
 ## Welcome to Interactive Calculator Application 
 
-This is the interactive Calculator that performs various functions.The calculator is a fully functional calculator that can perform basic arithmeticoperations, stores history, gets history, deletes history, imports history from a csv file, and exports history from a csv file. The calculator also displays a user friednly menu options.
+This is the interactive Calculator that performs various functions.The calculator is a fully functional calculator that can perform basic arithmetic operations, stores history, gets history, deletes history, imports history from a csv file, and exports history from a csv file. The calculator also displays a user friendly menu options.
 
 	Greet : To Perform Greet Operation
 
@@ -59,9 +59,14 @@ ii) Implementation of command pattern and REPL to perform Add, Subtract, Multipl
    
    	Using GitHub Actions workflow to run tests on GitHub automatically.
 
-7. Calculation History Management
+6. Calculation History Management
    	Using Pandas library for Dataframe loading , CSV file export and import functions for History Management . Functions To Load, save, clear, and delete history records through the REPL interface.
 
+7. Version Control
+	Git Best Practices: This project is maintained using Git version control. Best practices such as branching for feature development and using logical, meaningful commit messages were followed throughout 	the project lifecycle.
+8. Testing
+	Test Coverage: The application is thoroughly tested using the pytest framework. All modules, functions, and features have been tested with a coverage rate of 92%.
+	Code Quality: The codebase adheres to PEP 8 standards, ensuring readability and maintainability. Testing also includes running pylint to maintain code quality.
 
 ## To Run the Applications:
 
@@ -114,6 +119,7 @@ There are many cases where DRY,LBYL and EAFP design principles are used in this 
 
 
 **LBYL (Look Before You Leap)** : This first checks to see if the logging configuration file present before it attempts to load it. If the config file exists, then loads the logging configuration otherwise default to a basic logging configuration.
+
 ![image](https://github.com/user-attachments/assets/28b4654e-c5eb-4ea5-9014-95fc497a3252)
 
 
@@ -127,6 +133,7 @@ Environmental Variables are loaded in the main.py. Environmental variables are l
 
 ## Logging
 Logging is used print INFO, WARNING and Error messages. Info letting them know how the interactive calculator works and how to execute the list of commands in the menu options. Logging is also used as a warning and sends them an error message if they input an invalid command. Examples are shown below.
+
 ![image](https://github.com/user-attachments/assets/9621dba2-8c70-4074-aa03-4f7854c20787)
 
 ![image](https://github.com/user-attachments/assets/70acd646-0cdf-41e5-a7ec-5e1250ed4ac2)
