@@ -165,6 +165,7 @@ pytest tests/test_main.py.
 
 ![image](https://github.com/user-attachments/assets/2eb35470-3710-47d1-aa01-f7f1dba346f7)
 ![image](https://github.com/user-attachments/assets/734554a2-d297-4f7e-a8a2-2618fa0dfbae)
+![image](https://github.com/user-attachments/assets/3c7afd5b-be70-4c4f-b73b-be411e47d1b2)
 
 
 ### My Calculator App Video Demonstration
